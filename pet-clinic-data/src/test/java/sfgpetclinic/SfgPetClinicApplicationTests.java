@@ -1,4 +1,4 @@
-package io.github.mac9p.sfgpetclinic;
+package sfgpetclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
