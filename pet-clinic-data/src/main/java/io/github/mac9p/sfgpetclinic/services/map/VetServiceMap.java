@@ -1,11 +1,11 @@
 package io.github.mac9p.sfgpetclinic.services.map;
 
 import io.github.mac9p.sfgpetclinic.model.Vet;
-import io.github.mac9p.sfgpetclinic.services.CrudService;
+import io.github.mac9p.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet,Long> implements CrudService<Vet,Long> {
+public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();

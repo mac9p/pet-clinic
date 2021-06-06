@@ -1,11 +1,11 @@
 package io.github.mac9p.sfgpetclinic.services.map;
 
 import io.github.mac9p.sfgpetclinic.model.Owner;
-import io.github.mac9p.sfgpetclinic.services.CrudService;
+import io.github.mac9p.sfgpetclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements CrudService<Owner,Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService{
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
@@ -29,5 +29,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements C
     @Override
     public void deleteById(Long id) {
     super.deleteByID(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
