@@ -12,6 +12,9 @@ import javax.persistence.Id;
 public class Person extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String address;
+    private String city;
+    private String telephoneNumber;
     private Long id;
     private String firstName;
     private String lastName;
