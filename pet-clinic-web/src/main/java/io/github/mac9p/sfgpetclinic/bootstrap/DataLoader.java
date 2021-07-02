@@ -1,13 +1,7 @@
 package io.github.mac9p.sfgpetclinic.bootstrap;
 
-import io.github.mac9p.sfgpetclinic.model.Owner;
-import io.github.mac9p.sfgpetclinic.model.Pet;
-import io.github.mac9p.sfgpetclinic.model.PetType;
-import io.github.mac9p.sfgpetclinic.model.Vet;
-import io.github.mac9p.sfgpetclinic.services.OwnerService;
-import io.github.mac9p.sfgpetclinic.services.PetService;
-import io.github.mac9p.sfgpetclinic.services.PetTypeService;
-import io.github.mac9p.sfgpetclinic.services.VetService;
+import io.github.mac9p.sfgpetclinic.model.*;
+import io.github.mac9p.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -21,12 +15,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final PetService petService;
+    private final SpecialtyService specialtyService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, PetService petService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, PetService petService, SpecialtyService specialtyService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.petService = petService;
+        this.specialtyService = specialtyService;
     }
 
     @Override
@@ -77,6 +73,13 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded owners---");
 
+        Specialty surgeon = new Specialty();
+        surgeon.setName("surgeon");
+        specialtyService.save(surgeon);
+
+        Specialty nutritionist = new Specialty();
+        nutritionist.setName("nutritionist");
+        specialtyService.save(nutritionist);
 
         Vet vet1 = new Vet();
         //vet1.setId(1L);
