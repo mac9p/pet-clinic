@@ -2,9 +2,10 @@ package io.github.mac9p.sfgpetclinic.services.map;
 
 import io.github.mac9p.sfgpetclinic.model.PetType;
 import io.github.mac9p.sfgpetclinic.services.PetTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class PetTypeServiceMap extends AbstractMapService<PetType,Long> implements PetTypeService {
     @Override
     public Set<PetType> findAll() {
