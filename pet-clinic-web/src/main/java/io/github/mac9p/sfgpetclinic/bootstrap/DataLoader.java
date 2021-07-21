@@ -86,11 +86,11 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loaded owners---");
 
         Specialty surgeon = new Specialty();
-        surgeon.setName("surgeon");
+        surgeon.setDescription("surgeon");
         specialtyService.save(surgeon);
 
         Specialty nutritionist = new Specialty();
-        nutritionist.setName("nutritionist");
+        nutritionist.setDescription("nutritionist");
         specialtyService.save(nutritionist);
 
         Vet vet1 = new Vet();
