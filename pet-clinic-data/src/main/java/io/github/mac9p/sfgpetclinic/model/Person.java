@@ -3,19 +3,20 @@ package io.github.mac9p.sfgpetclinic.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
 @Getter
 @Setter
+@MappedSuperclass
 public class Person extends BaseEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String address;
     private String city;
     private String telephoneNumber;
-    private Long id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
 }
